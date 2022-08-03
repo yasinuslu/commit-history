@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
-import { GithubCommitResponse } from './lib/types';
+import { GithubCommitResponse } from '../lib/types';
 
 export async function getServerSideProps() {
   // Fetch data from external API

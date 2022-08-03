@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { Octokit } from '@octokit/core';
-import { GithubCommitResponse } from '../lib/types';
+import { GithubCommitResponse } from '../../lib/types';
 
 const githubClient = new Octokit({
   auth: process.env.GITHUB_PERSONAL_ACCESS_TOKEN,
