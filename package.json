@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
     "@octokit/core": "^4.0.4",
     "next": "12.2.3",
     "react": "18.2.0",
