@@ -3,9 +3,11 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## TODOS
 
 - [x] Fetch data from github in the middleware
-- [ ] Show data in a simple way
+- [x] Show data in a simple way
+- [ ] Configure deployment
 - [ ] Work on the design until satisfaction
 - [ ] Refactor the code
+- [ ] Add unit tests
 
 ## Getting Started
 
