@@ -22,5 +22,4 @@ export default async function handler(
   const commits = githubResponse.data as GithubCommitResponse[];
 
   res.status(200).json(commits);
-  // res.status(200).json(commits);
 }

@@ -1,21 +1,19 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
+import useSWR from 'swr';
 import { GithubCommitResponse } from '../lib/types';
 
-export async function getServerSideProps() {
+const fetcher = (url: string) => fetch(url).then((res) => res.json());
+
+const Home: NextPage = () => {
   // Fetch data from external API
-  const res = await fetch(`http://localhost:3000/api/commits`);
-  const data = await res.json();
+  const { data, error } = useSWR<GithubCommitResponse[]>(
+    '/api/commits',
+    fetcher,
+  );
+  if (error) return <div>Failed to load</div>;
+  if (!data) return <div>Loading...</div>;
 
-  // Pass data to the page via props
-  return { props: { data } };
-}
-
-interface HomeProps {
-  data: GithubCommitResponse[];
-}
-
-const Home: NextPage<HomeProps> = ({ data }) => {
   return (
     <div className="flex flex-1 flex-col items-center gap-2 mt-2">
       {data.map((commit) => {
