@@ -1,17 +1,15 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { Octokit } from '@octokit/core';
-import { Commit } from '../lib/types';
+import { GithubCommitResponse } from '../lib/types';
 
 const githubClient = new Octokit({
   auth: process.env.GITHUB_PERSONAL_ACCESS_TOKEN,
 });
 
-type Data = Commit[];
-
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>,
+  res: NextApiResponse<GithubCommitResponse[]>,
 ) {
   const githubResponse = await githubClient.request(
     'GET /repos/{owner}/{repo}/commits',
@@ -20,15 +18,9 @@ export default async function handler(
       repo: process.env.GITHUB_REPO || '',
     },
   );
-  const commits: Commit[] = githubResponse.data.map((commit) => ({
-    author: {
-      name: commit.commit.author?.name,
-      email: commit.commit.author?.email,
-      date: commit.commit.author?.date,
-    },
-    message: commit.commit.message,
-    url: commit.url,
-  }));
+
+  const commits = githubResponse.data as GithubCommitResponse[];
 
   res.status(200).json(commits);
+  // res.status(200).json(commits);
 }

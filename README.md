@@ -1,5 +1,12 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## TODOS
+
+- [x] Fetch data from github in the middleware
+- [ ] Show data in a simple way
+- [ ] Work on the design until satisfaction
+- [ ] Refactor the code
+
 ## Getting Started
 
 First, run the development server:
