@@ -4,9 +4,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 - [x] Fetch data from github in the middleware
 - [x] Show data in a simple way
-- [ ] Configure deployment
-- [ ] Work on the design until satisfaction
-- [ ] Refactor the code
+- [x] Configure deployment
+- [x] Work on the design until satisfaction
+- [x] Refactor the code
 - [ ] Add unit tests
 
 ## Getting Started
