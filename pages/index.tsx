@@ -12,7 +12,11 @@ const Home: NextPage = () => {
   if (error) return <div>Failed to load</div>;
   if (!commits) return <div>Loading...</div>;
 
-  return <CommitList commits={commits} />;
+  return (
+    <div className="bg-gray-600">
+      <CommitList commits={commits} />
+    </div>
+  );
 };
 
 export default Home;

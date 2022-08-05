@@ -7,7 +7,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - [x] Configure deployment
 - [x] Work on the design until satisfaction
 - [x] Refactor the code
-- [ ] Add unit tests
+- [x] Add unit tests
 
 ## Getting Started
 
